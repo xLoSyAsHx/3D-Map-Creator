@@ -16,6 +16,8 @@
 
 #include "helper.h"
 
+#include "resource.h"
+
 
 HDC			hDC = NULL;		// Private GDI Device Context
 HGLRC		hRC = NULL;		// Permanent Rendering Context
@@ -481,6 +483,22 @@ LRESULT CALLBACK WndProc(HWND	hWnd,			// Handle For This Window
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
 }
 
+
+
+INT_PTR CALLBACK DlgProc(HWND hWnd, UINT mes, WPARAM wp, LPARAM lp)
+{
+	switch (mes)
+	{
+	case WM_CLOSE:
+		// закрываем немодальный диалог
+		DestroyWindow(hWnd); // разрушаем окно
+		PostQuitMessage(0); // останавливаем цикл обработки сообщений
+		return TRUE;
+	}
+	return FALSE;
+}
+
+
 int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
 	HINSTANCE	hPrevInstance,		// Previous Instance
 	LPSTR		lpCmdLine,			// Command Line Parameters
@@ -500,6 +518,10 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
 	{
 		return 0;									// Quit If Window Was Not Created
 	}
+
+	HWND dlg = CreateDialog(hInstance, MAKEINTRESOURCE(IDD_DIALOG1), NULL, DlgProc);
+	ShowWindow(dlg, nCmdShow);
+
 
 	while (!done)									// Loop That Runs While done=FALSE
 	{

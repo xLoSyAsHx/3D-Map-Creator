@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\user\desktop\hse\programming\c++\курс 2\opengl\курсач\model creator\model creator\main.cpp(351): warning C4838: преобразование из "int" в "BYTE" требует сужающего преобразования
+main.obj : error LNK2019: ёё√ыър эр эхЁрчЁх°хээ√щ тэх°эшщ ёшьтюы _SOIL_load_OGL_texture т ЇєэъЎшш "int __cdecl LoadGLTextures(char *,unsigned int *)" (?LoadGLTextures@@YAHPADPAI@Z)
+C:\Users\User\Desktop\HSE\Programming\C++\╩єЁё 2\OpenGL\ъєЁёрў\Model creator\Debug\Model creator.exe : fatal error LNK1120: эхЁрчЁх°хээ√ї тэх°эшї ¤ыхьхэЄют: 1

@@ -3,228 +3,91 @@
 
 #include <GL\freeglut.h>
 #include <iostream>
-#include <iomanip>
-#include <windows.h>
-#include <stdio.h> 
-#include <malloc.h>
-#include <chrono>
+#include <Windows.h>
+#include <commdlg.h>
+#include <vector>
+#include <algorithm>
 #include <map>
+#include <cmath>     // Заголовочный файл для математической библиотеки ( НОВОЕ )
+#include <stdarg.h>   // Заголовочный файл для функций для работы с переменным
 
-#include <SOIL.h>
 
-#include "Vect.h"
-#include "CameraLocation.h"
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include "opencv2/imgproc/imgproc.hpp"
+
+#include "Vect4f.h"
+#include "structs.h"
 #include "gloabalVars.h"
+#include "Matrix.h"
 
 
-void print(float f);
-void dbgprintf(char * format, ...);
+int LoadGLTextures(std::string filename, GLuint *texture);
 
+void glDrawSquare(GLfloat sideLen, Vect3f &pos, Vect3f &delPos, Vect3f &rot);
 
-int LoadGLTextures(char* filename, GLuint *texture)                                    // Load Bitmaps And Convert To Textures
-{
-	/* load an image file directly as a new OpenGL texture */
-	*texture = SOIL_load_OGL_texture
-	(
-		filename,
-		SOIL_LOAD_AUTO,
-		SOIL_CREATE_NEW_ID,
-		SOIL_FLAG_INVERT_Y
-	);
+void glDrawCube(GLfloat sideLen, Vect3f & pos, vector3ub &color);
 
-	if (texture[0] == 0)
-		return 1;
+void BuildFont(HDC hDC, GLuint &base);
 
+void glPrint(GLuint &base, const char *fmt, ...);
 
-	// Typical Texture Generation Using Data From The Bitmap
-	glBindTexture(GL_TEXTURE_2D, *texture);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+void glTranslatef(const Vect3f& vect);
 
-	return 0;                                        // Return Success
-}
+void glRotatef(const Vect3f& vect);
 
-void createGrid() {
-	glLoadIdentity();
+void glTexCoord2f(const Vect2f& vect);
 
-	glBegin(GL_LINE);
+void glColor4f(const Vect4f& vect);
 
-	glEnd();
-}
+void glColor4ub(const Vect4f& vect);
 
-class {
-	std::map<char, std::chrono::time_point<std::chrono::system_clock>> timers = { { 'W', std::chrono::system_clock::now() },
-																		   		  { 'S', std::chrono::system_clock::now() },
-																				  { 'A', std::chrono::system_clock::now() },
-																				  { 'D', std::chrono::system_clock::now() } };
+void glColor3f(const Vect3f& vect);
 
-	std::map<char, bool> wasPressed = { { 'W', false },
-										{ 'S', false },
-										{ 'A', false },
-										{ 'D', false },
-										{ VK_LBUTTON, false } };
+void glColor3ub(const vector3ub vect);
 
-	CameraLocation cam;
-public:
-	// Set key state (pressed or no)
-	void setKeyState(char key, bool status) { 
-		wasPressed[key] = status;
-	}
+void glVertex3f(const Vect3f vect);
 
+//void glRotatef(const Vect3f& vect);
+//void useMoveRotMatrix(std::vector<Vect3f*>* vertexes, std::vector<Vect3f*>* shift, std::vector<Vect3f*>* rot);
 
-	bool isPresssed(char key) { return wasPressed[key]; }
+std::vector<std::vector<int>> getRotationMatrix(int index, float alpha); // 0 - X; 1 - Y; 2 - Z
 
-	bool canUse(char key) {
-
-		auto end = std::chrono::system_clock::now();
-
-		int time_ms = std::chrono::duration_cast<std::chrono::milliseconds>	(end - timers[key]).count();
-
-		if (isPresssed(key)) {
-			if (time_ms < 70)
-				return false;
-			else 
-			{
-				startTimer(key);
-				return true;
-			}
-		}
-
-		if (time_ms < 250)
-			return false;
-		startTimer(key);
-		wasPressed[key] = true;
-		return true;
-	}
-
-	void startTimer(char key) {
-		timers[key] = std::chrono::system_clock::now();
-	}
-
-	CameraLocation& getCamera() { return cam; }
-} moveBtnsControl;
+//void multiplieMatrix(std::vector<std::vector<int>> &mat1, std::vector<std::vector<int>> &mat2);
 
 
 
-void control(bool	(keys[][256]), GLfloat &x, GLfloat &y, GLfloat &z, int &wheelDelta) {
-	//Объект
-	//---------------------------------------------------
-	if ((*keys)[VK_CONTROL])
-	{
-		if ((*keys)['W'])
-		{
-			if (moveBtnsControl.canUse('W'))
-				z -= 1;
-		}
-		else
-			moveBtnsControl.setKeyState('W', false);
+Vect3f rotateVect3f(int index, Vect3f& vect, float alpha);
 
-		if ((*keys)['S'])
-		{
-			if (moveBtnsControl.canUse('S'))
-				z += 1;
-		}
-		else
-			moveBtnsControl.setKeyState('S', false);
+float calcSquare(Vect3f a, Vect3f b, Vect3f c);
 
-		if ((*keys)['A'])
-		{
-			if (moveBtnsControl.canUse('A'))
-				x -= 1;
-		}
-		else
-			moveBtnsControl.setKeyState('A', false);
+float calcLen(Vect3f a, Vect3f b);
 
-		if ((*keys)['D'])
-		{
-			if (moveBtnsControl.canUse('D'))
-				x += 1;
-		}
-		else
-			moveBtnsControl.setKeyState('D', false);
+float sqr(GLfloat a);
 
-		if (wheelDelta != 0)
-		{
-			y += wheelDelta / abs(wheelDelta);
-			wheelDelta = 0;
-		}
-	}
+bool isUniqueNumPressed(bool key[][256], int val);
 
+vector3ub getColorForSimpleDraw(std::map<int, vector3ub> &map);
 
+vector3ub getColorForVertColorMap(std::map<int, std::map<Vect3f*, vector3ub>> &map);
 
-	//Камера
-	//---------------------------------------------------
+vector3ub to_vector3ub(long val);
 
-	GLfloat temp_x = 0, temp_y = 0, temp_z = 0;
-	if (!(*keys)[VK_CONTROL])
-	{
-		if ((*keys)['W'])
-			temp_x = 1.0f;
+std::vector<std::string> getKeys(std::map<std::string, std::map<int, int>> &obj);
 
-		if ((*keys)['S'])
-			temp_x = -1.0f;
+int getNumOfPointsByMode(int mode);
 
-		if ((*keys)['A'])
-			temp_z = -1.0f;
+std::pair<int, OPENFILENAME> getOFN(HWND hWnd, char* filter);
 
-		if ((*keys)['D'])
-			temp_z = 1.0f;
+Vect2f * genColor2f(Vect2f * color);
 
-		if (wheelDelta != 0)
-		{
-			temp_y += GLfloat(wheelDelta) / abs(wheelDelta);
-			wheelDelta = 0;
-		}
-	}
-	
-	//Мышь
-	//---------------------------------------------------
-	CameraLocation& cam = moveBtnsControl.getCamera();
+std::vector<Vect2f*> * genColorVect2f(std::vector<Vect2f*> *vect);
 
+Vect4f * genColor4f(Vect4f * color);
 
-	if ((*keys)[VK_LBUTTON] && !(*keys)[VK_CONTROL])
-	{
+std::vector<Vect4f*> * genColorVect4f(std::vector<Vect4f*> *vect);
 
-		if (!moveBtnsControl.isPresssed(VK_LBUTTON))
-		{
-			moveBtnsControl.setKeyState(VK_LBUTTON, true);
-			cam.updateMousePos();
-		}
-
-		cam.defAngles();
-		cam.defRotVect();
-	}
-	else
-		moveBtnsControl.setKeyState(VK_LBUTTON, false);
-
-	if (temp_x != 0.0f || temp_z != 0.0f || temp_z != 0.0f)
-		cam.updatePos(temp_x, temp_y, temp_z);
-}
-
-void print(float f) {
-	char str[10];
-	sprintf_s(str, "%f\n", f);
-	dbgprintf(str);
-}
-
-void dbgprintf(char * format, ...)
-{
-	va_list args;
-	int len;
-	char * buffer;
-
-	va_start(args, format);
-	len = _vscprintf(format, args) // _vscprintf doesn't count
-		+ 4; // terminating '\0'
-	buffer = (char*)malloc(len * sizeof(char));
-	unsigned u = vsprintf_s(buffer, len, format, args);
-	buffer[u] = 13;
-	buffer[u + 1] = 10;
-	buffer[u + 2] = 0;
-	OutputDebugString(buffer);
-	free(buffer);
-}
-
-
+bool operator<(const VertexKey l, const VertexKey r);
 
 #endif HELPER_H

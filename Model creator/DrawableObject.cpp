@@ -1,67 +1,84 @@
 #include "DrawableObject.h"
 
-DrawableObject::DrawableObject(std::vector<Vect>& vertxMas, int mode) :
-	vertexes3f(vertxMas), mode(mode)
+
+
+DrawableObject::DrawableObject(std::vector<OpenGL_Base*>* vertxMas, 
+	std::vector<Vect3f*>* pos, std::vector<Vect3f*>* rot,
+	Vect3f objPos, Vect3f objRot) :
+	Drawable(), vertexes3f(vertexes3f), vertPosition(pos), vertRotation(rot),
+	objPosition(objPos), objRotation(objRot)
 {
 }
 
-void DrawableObject::draw() const
+void DrawableObject::draw()
 {
-	glBegin(mode);
 
-	for (auto obj : vertexes3f)
-		glVertex3f(obj.getX(), obj.getY(), obj.getZ());
 
-	glEnd();
+	auto it_vertPos = vertPosition->begin();
+	auto it_vertRot = vertRotation->begin();
+
+	glPushMatrix();
+
+	glTranslatef(objPosition);
+	glRotatef(objRotation);
+
+	for (auto vert = vertexes3f->begin(); vert != vertexes3f->end(); ++vert)
+	{
+
+		//glBegin((*vert)->getMode());
+		glPushMatrix();
+
+		glTranslatef(**it_vertPos);
+		
+		(*vert)->draw();
+
+		glPopMatrix();
+		//glEnd();
+	}
+
+	glPopMatrix();
 }
 
-Vect DrawableObject::getPosition() const
+void DrawableObject::setPosition(Vect3f pos)
 {
-	return position;
+	objPosition = pos;
 }
 
-Vect DrawableObject::getRotation() const
+void DrawableObject::move(GLfloat x, GLfloat y, GLfloat z)
 {
-	return rotation;
+	objPosition.move(x, y, z);
+
+}
+
+void DrawableObject::move(Vect3f vect)
+{
+	objPosition.move(vect);
+}
+
+void DrawableObject::setRotation(Vect3f rot)
+{
+	objRotation.set(rot);
+}
+
+Vect3f DrawableObject::getPosition() const
+{
+	return objPosition;
+}
+
+Vect3f DrawableObject::getRotation() const
+{
+	return objRotation;
+}
+
+
+bool DrawableObject::isTrans() const
+{
+	return alpha == 0.0f;
 }
 
 DrawableObject::~DrawableObject()
 {
-}
-
-DrawableObject *DrawableObject::loadFromFile(std::string path)
-{
-	std::fstream fin(path);
-
-	if (!fin.is_open()) {
-		char* err = "\nErr: DrawableObject::loadFromFile\tcan't open file.";
-
-		dbgprintf(err);
-		fin.close();
-		return nullptr;
-	}
-
-	/*
-	glMode
-	num_of_points
-	x y z
-	...
-	x y z
-	*/
-	int mode;
-	fin >> mode;
-
-	int size;
-	fin >> size;
-
-	std::vector<Vect> vertxMas;
-	vertxMas.resize(size);
-	for (int i = 0; i < size; ++i) {
-		float x, y, z;
-		fin >> x >> y >> z;
-		vertxMas[i] = { x, y, z };
-	}
-	fin.close();
-
-	return new DrawableObject(vertxMas, mode);
+	delete vertexes3f;
+	delete vertPosition;
+	delete vertRotation;
 }

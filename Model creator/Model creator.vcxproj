@@ -74,11 +74,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\include;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SOIL.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\x64\vc14\lib;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world320d.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -87,11 +87,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\include;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SOIL.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\x64\vc14\lib;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world320d.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -102,13 +102,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\include;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SOIL.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\x64\vc14\lib;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world320d.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -119,30 +119,142 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\include;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SOIL.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\User\Desktop\GL\OpenCV\opencv\build\x64\vc14\lib;C:\Users\User\Desktop\HSE\Programming\C++\Курс 2\OpenGL\курсач\Model creator\Model creator\external;C:\Users\User\Desktop\GL\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world320d.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CameraLocation.cpp" />
+    <ClCompile Include="ColTriangle.cpp" />
+    <ClCompile Include="DlgHelper.cpp" />
+    <ClCompile Include="LoggerMovePartSys.cpp" />
+    <ClCompile Include="MCClassEditParticleSystemDlgProc.cpp" />
+    <ClCompile Include="GraphicHelper.cpp" />
+    <ClCompile Include="ListController.cpp" />
+    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="BaseLoggerObject.cpp" />
+    <ClCompile Include="LoggerCreateDelObj.cpp" />
+    <ClCompile Include="LoggerMoveObjs.cpp" />
+    <ClCompile Include="LoggerMoveVerts.cpp" />
+    <ClCompile Include="LoggerRotObjs.cpp" />
+    <ClCompile Include="LoggerScalObjs.cpp" />
+    <ClCompile Include="LoggerSetTexColor.cpp" />
+    <ClCompile Include="MCClassItemEditDlgProc.cpp" />
+    <ClCompile Include="MCClassItemsAddDlgProc.cpp" />
+    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="ParticlePresenter.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="ParticleSystemPresenter.cpp" />
+    <ClCompile Include="RoundObjHelper.cpp" />
+    <ClCompile Include="Saver.cpp" />
+    <ClCompile Include="SelectedCube.cpp" />
+    <ClCompile Include="structs.cpp" />
+    <ClCompile Include="TexTriangle.cpp" />
+    <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="WinCreateModel.cpp" />
+    <ClCompile Include="DrawableObject2.cpp" />
+    <ClCompile Include="DrawableObjectPresenter2.cpp" />
+    <ClCompile Include="helper.cpp" />
+    <ClCompile Include="helper2.cpp" />
+    <ClCompile Include="Inits.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Vect.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="MoveBtnsController.cpp" />
+    <ClCompile Include="OpenGL_Base.cpp" />
+    <ClCompile Include="Plane3D.cpp" />
+    <ClCompile Include="Vect3f.cpp" />
+    <ClCompile Include="Vect4f.cpp" />
+    <ClCompile Include="Vect2f.cpp" />
+    <ClCompile Include="WinCreateParticleSystem.cpp" />
+    <ClCompile Include="WindowHelper.cpp" />
+    <ClCompile Include="Win3DMapRedactor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="addItemsDlg.h" />
+    <ClInclude Include="AddRoundObjsDlg.h" />
     <ClInclude Include="CameraLocation.h" />
+    <ClInclude Include="ColTriangle.h" />
+    <ClInclude Include="DlgHelper.h" />
+    <ClInclude Include="editParticleSysDlg.h" />
+    <ClInclude Include="LoggerMovePartSys.h" />
+    <ClInclude Include="MCClassEditParticleSystemDlgProc.h" />
+    <ClInclude Include="GraphicHelper.h" />
+    <ClInclude Include="ID.h" />
+    <ClInclude Include="ListController.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="BaseLoggerObject.h" />
+    <ClInclude Include="LoggerCreateDelObj.h" />
+    <ClInclude Include="LoggerMoveObjs.h" />
+    <ClInclude Include="LoggerMoveVerts.h" />
+    <ClInclude Include="LoggerRotObjs.h" />
+    <ClInclude Include="LoggerScalObjs.h" />
+    <ClInclude Include="LoggerSetTexColor.h" />
+    <ClInclude Include="mapTexDlg.h" />
+    <ClInclude Include="MCClassItemEditDlgProc.h" />
+    <ClInclude Include="MCClassItemsAddDlgProc.h" />
+    <ClInclude Include="NonCopyable.h" />
+    <ClInclude Include="Particle.h" />
+    <ClInclude Include="ParticlePresenter.h" />
+    <ClInclude Include="particleSysDlg.h" />
+    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="ParticleSystemPresenter.h" />
+    <ClInclude Include="ParticleSystemsDlg.h" />
+    <ClInclude Include="ProgramDefines.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="resource2.h" />
+    <ClInclude Include="resource3.h" />
+    <ClInclude Include="rotationDlg.h" />
+    <ClInclude Include="RoundObjHelper.h" />
+    <ClInclude Include="saveDlg.h" />
+    <ClInclude Include="Saver.h" />
+    <ClInclude Include="SelectedCube.h" />
+    <ClInclude Include="setProbabilityDlg.h" />
+    <ClInclude Include="TexTriangle.h" />
+    <ClInclude Include="Triangle.h" />
+    <ClInclude Include="WinCreateModel.h" />
+    <ClInclude Include="DrawableObject2.h" />
+    <ClInclude Include="DrawableObjectPresenter2.h" />
     <ClInclude Include="gloabalVars.h" />
     <ClInclude Include="helper.h" />
+    <ClInclude Include="helper2.h" />
+    <ClInclude Include="Inits.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="MoveBtnsController.h" />
+    <ClInclude Include="OpenGL_Base.h" />
+    <ClInclude Include="Plane3D.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Vect.h" />
+    <ClInclude Include="structs.h" />
+    <ClInclude Include="Vect3f.h" />
+    <ClInclude Include="Vect4f.h" />
+    <ClInclude Include="Vect2f.h" />
+    <ClInclude Include="WinCreateParticleSystem.h" />
+    <ClInclude Include="WindowHelper.h" />
+    <ClInclude Include="Win3DMapRedactor.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="dlg.rc" />
+    <ResourceCompile Include="addItemsDlg.rc" />
+    <ResourceCompile Include="EditParticleSys.rc" />
+    <ResourceCompile Include="mapTexDlg.rc" />
+    <ResourceCompile Include="ParticleSysDlg.rc" />
+    <ResourceCompile Include="particleSystemsDlg.rc" />
+    <ResourceCompile Include="Resource1.rc" />
+    <ResourceCompile Include="Rotation.rc" />
+    <ResourceCompile Include="RoundObjAddDlg.rc" />
+    <ResourceCompile Include="saveDlg.rc" />
+    <ResourceCompile Include="SetProbability.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursor1.cur" />
+    <None Include="cursor2.cur" />
+    <None Include="zalivka2.cur" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

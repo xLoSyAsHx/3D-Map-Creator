@@ -1,28 +1,45 @@
-#ifndef DRAWABLE_OBJECT
-#define DRAWABLE_OBJECT
+#ifndef DRAWABLE_OBJECT_H
+#define DRAWABLE_OBJECT_H
 
+#include <GL\freeglut.h>
 #include <iostream>
 #include <vector>
-#include <fstream>
+
+#include "Vect4f.h"
+#include "structs.h"
+#include "OpenGL_Base.h"
 #include "helper.h"
 
-class DrawableObject
+class DrawableObject : public Drawable
 {
-	int mode;
-	Vect position, rotation;
-	std::vector<Vect> vertexes3f;
+	Vect3f objPosition, objRotation;
+	std::vector<Vect3f*> *vertPosition, *vertRotation;
+	std::vector<OpenGL_Base*> *vertexes3f;
+	GLfloat alpha;
 public:
-	DrawableObject(std::vector<Vect>& vertxMas, int mode);
+	DrawableObject(std::vector<OpenGL_Base*>* vertxMas, std::vector<Vect3f*>* pos, std::vector<Vect3f*>* rot,
+		//Vect3f objPos = Vect3f(0, 0, 0) , Vect3f objRot = Vect3f(0, 0, 0));
+		Vect3f objPos, Vect3f objRot);
 
-	void draw() const;
+	void draw();
 
-	Vect getPosition() const;
+	void setPosition(Vect3f pos);
 
-	Vect getRotation() const;
+	void move(GLfloat x, GLfloat y, GLfloat z);
+
+	void move(Vect3f vect);
+
+	void setRotation(Vect3f rot);
+
+	Vect3f getPosition() const;
+
+	Vect3f getRotation() const;
+
+	bool isTrans() const;
 
 	~DrawableObject();
 
-	static DrawableObject* loadFromFile(std::string path);
+	//static DrawableObject* loadFromFile(std::string path);
 };
 
-#endif DRAWABLE_OBJECT
+#endif DRAWABLE_OBJECT_H

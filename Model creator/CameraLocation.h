@@ -5,22 +5,24 @@
 #include <iostream>
 #include <cmath>
 
-#include "Vect.h"
+#include "Vect4f.h"
 #include "gloabalVars.h"
 
 class CameraLocation {
 	GLfloat x_angle, y_angle;
-	Vect WS_Vect, AD_Vect, UPDOWN_Vect;
-	Vect pos = { 0, 0, -5 };
+	Vect3f WS_Vect, AD_Vect, UPDOWN_Vect;
+	Vect3f pos;// = { 0, 0, 10 };
 
 	GLfloat x_mousePos, y_mousePos;
 
 	static GLfloat yDelta;
 public:
 
+	CameraLocation();
+
 	void defRotVect();
 
-	void updatePos(GLfloat ws, GLfloat updown, GLfloat ad);
+	void updatePos(GLfloat ws, GLfloat updown, GLfloat ad, GLfloat speedKoef);
 
 	void updateMousePos();
 
@@ -35,6 +37,10 @@ public:
 	GLfloat getY() const;
 
 	GLfloat getZ() const;
+
+	Vect2f getMousePos() const;
+
+	Vect3f getDirect() const;
 
 };
 

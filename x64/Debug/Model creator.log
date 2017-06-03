@@ -1,0 +1,19 @@
+﻿  Vect.cpp
+  main.cpp
+c:\users\user\documents\github\3d-map-creator\model creator\helper.h(81): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(104): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(105): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(111): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(112): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(118): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(119): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(352): warning C4838: преобразование из "int" в "BYTE" требует сужающего преобразования
+c:\users\user\documents\github\3d-map-creator\model creator\main.cpp(647): warning C4244: return: преобразование "WPARAM" в "int", возможна потеря данных
+  CameraLocation.cpp
+c:\users\user\documents\github\3d-map-creator\model creator\cameralocation.cpp(33): warning C4244: =: преобразование "LONG" в "GLfloat", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\cameralocation.cpp(34): warning C4244: =: преобразование "LONG" в "GLfloat", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\cameralocation.cpp(47): warning C4244: =: преобразование "LONG" в "GLfloat", возможна потеря данных
+c:\users\user\documents\github\3d-map-creator\model creator\cameralocation.cpp(48): warning C4244: =: преобразование "LONG" в "GLfloat", возможна потеря данных
+  Создание кода...
+RC : fatal error RC1110: could not open dlg.rc
+  

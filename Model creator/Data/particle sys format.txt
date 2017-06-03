@@ -1,0 +1,85 @@
+Simple triangle		Название
+0 0 -5 0 0 0		Позиция; Углы поворота
+1			Кол-во OpenGL_Base
+0 0 0 0 0 0		Позиция; Углы поворота
+1			Используется текстура? (bool)
+4 3			GL_MODE; Кол-во точек
+-1 0 0			Точка 1
+1 0 0			Точка 2
+0 1 0			Точка 3
+0 0			Координаты текстуры для точки 1
+0 1			Координаты текстуры для точки 2
+1 1			Координаты текстуры для точки 3
+Data/triangle.bmp	Путь до текстуры
+//
+
+
+
+
+
+
+Название
+//FromDOPresenter
+2				Размер FromDOPresenter	
+"Disk"			Имя объекта	
+0 0 -5 0 0 0		Позиция; Углы поворота
+1			Кол-во OpenGL_Base
+0 0 0 0 0 0		Позиция; Углы поворота
+-1 0 0			Точка 1
+1 0 0			Точка 2
+0 1 0			Точка 3		
+//area  					имя объекта == type
+1				A_koef
+0				B_koef
+1				C_koef
+0 0 0 0 0 0		areaPos; areaRot
+80.0			chanceToAppear
+"Disk"			Имя объекта
+0 0 -5 0 0 0		Позиция; Углы поворота
+1			Кол-во OpenGL_Base
+0 0 0 0 0 0		Позиция; Углы поворота
+-1 0 0			Точка 1
+1 0 0			Точка 2
+0 1 0			Точка 3
+//area
+1				A_koef
+0				B_koef
+1				C_koef
+0 0 0 0 0 0		areaPos; areaRot
+80.0			chanceToAppear
+//ToDOPresenter
+1				Размер ToDOPresenter	
+"Disk"			Имя объекта
+0 0 -5 0 0 0		Позиция; Углы поворота
+1			Кол-во OpenGL_Base
+0 0 0 0 0 0		Позиция; Углы поворота
+-1 0 0			Точка 1
+1 0 0			Точка 2
+0 1 0			Точка 3
+//area
+1				A_koef
+0				B_koef
+1				C_koef
+0 9 0 0 0 0		areaPos; areaRot
+100.0			chanceToAppear
+//ParticleInfo
+100				numOfParticles
+5000			speedOfOccur // in milisec
+0 0 0			particleFluct
+0 0 0			particleFluctLen
+0 0 0			particleRot
+5				particleSpeed
+//Particle
+//Simple triangle		Название
+0 0 -5 0 0 0		Позиция; Углы поворота
+1			Кол-во OpenGL_Base
+0 0 0 0 0 0		Позиция; Углы поворота
+1			Используется текстура? (bool)
+4 3			GL_MODE; Кол-во точек
+-1 0 0			Точка 1
+1 0 0			Точка 2
+0 1 0			Точка 3
+0 0			Координаты текстуры для точки 1
+0 1			Координаты текстуры для точки 2
+1 1			Координаты текстуры для точки 3
+Data/triangle.bmp	Путь до текстуры
